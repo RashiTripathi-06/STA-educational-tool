@@ -3,9 +3,7 @@
 EduSTA is a Python-based, beginner-friendly project that explains
 **Static Timing Analysis (STA)** by implementing it step-by-step in code.
 
-The project focuses on building intuition by modeling digital circuits
-as graphs and analyzing timing paths programmatically, similar to
-real-world STA engines, but simplified for learning.
+Built alongside coursework in Digital Design, this project goes beyond formulas to develop an implementation-level understanding of Static Timing Analysis by modeling digital circuits as graphs and analyzing timing paths programmatically, in a simplified form inspired by real STA tools.
 
 ## What is Static Timing Analysis (STA)?
 Static Timing Analysis is a method used in digital design to verify
