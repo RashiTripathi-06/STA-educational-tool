@@ -3,7 +3,7 @@
 # computing Tcomb
 def compute_Tcomb(path, delays):
     Tcomb = 0
-    for i in range(len(path) - 1):  # len(path) = 4
+    for i in range(len(path) - 1):  # len(path) = 4 for below example
         start = path[i]
         end = path[i + 1]
         Tcomb = Tcomb + delays[(start, end)]
@@ -18,6 +18,40 @@ def check_setup(Tclk, Tcq, Tcomb, Tsetup):
 def check_hold(Tcq_min, Tcomb_min, Thold):
     hold_slack = (Tcq_min + Tcomb_min) - Thold
     return hold_slack
+
+# Build timing graph from edges
+def build_graph(edges):
+    graph = {}
+    delays = {}
+
+    for src, dst, delay in edges:
+        if src not in graph:
+            graph[src] = []
+        graph[src].append(dst)
+        delays[(src, dst)] = delay
+
+    return graph, delays
+
+# Find all paths using DFS
+def find_all_paths(graph, start, end, path=None):
+    if path is None:
+        path = []
+
+    path = path + [start]
+
+    if start == end:
+        return [path]
+
+    if start not in graph:
+        return []
+
+    paths = []
+    for node in graph[start]:
+        if node not in path:
+            new_paths = find_all_paths(graph, node, end, path)
+            paths.extend(new_paths)
+
+    return paths
 
                                    # Example usage (single-path STA)
 # Run this file directly to see example STA calculations
