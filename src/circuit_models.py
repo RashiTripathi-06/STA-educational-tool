@@ -1,5 +1,4 @@
-# circuit_models.py
-# Circuit descriptions for EduSTA (user-defined)
+# Circuit descriptions(user-defined)
 
 def example_multi_path_circuit():
     """
