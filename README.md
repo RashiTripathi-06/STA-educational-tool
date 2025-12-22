@@ -1,6 +1,7 @@
 # EduSTA – An Educational Static Timing Analysis Tool
 
 EduSTA is a Python-based educational project that demonstrates the fundamentals of **Static Timing Analysis (STA)** through clear, programmatic implementation.
+
 Built alongside coursework in Digital Design, the project moves beyond formula-based examples to provide an implementation-level understanding of STA, inspired by how real timing analysis tools reason about circuits.
 
 ## What is Static Timing Analysis (STA)?
